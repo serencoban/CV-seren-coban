@@ -1,0 +1,16 @@
+body{
+    background-color: #0f0d13;
+    color: aliceblue;
+    font-family: "Inter", serif;
+    
+}
+
+.section{
+    background-color: darkgreen;
+    padding-bottom: 10px;
+}
+
+.title{
+    font-size: 30px;
+}
+
