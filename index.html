@@ -1,69 +1,203 @@
-<!doctype html>
+<!-- 
+ avoir plusieur version d'une mm images (srcset, wordpress peut aider)
+ pas utlsier png partout
+ attribut alt
+ sass scss tailwind
+ gtmetrix
+ 
+-->
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <script defer src="script.js"></script>
-    <title>Seren Coban CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Coban Seren</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <script defer src="js/script.js"></script>
+    
 </head>
+
 <body>
-    <header class="biographie">
-        <div>
-            <img src="/">
-            <h1>Coban Seren</h1>
-        </div>
+    <header>
+        <h1 class="hidden"></h1>
+        
+        <nav class="navbar">
+            <h2 class="hidden"></h2>
+            <div class="image-cv"></div>
+            <a href="#">
+                <img class="logo_deezer" src="images/logo_deezer.svg" alt="Logo Deezer">
+            </a>
+            
+            <div id="sidenav" class="off_screen_menu navmenu">
+                <ul>
+                    <li class="nav_item"><a href="#" class="nav_link">Connexion</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">Inscription</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">Télécharger l’application</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">Offres</a></li>
+                    <li class="nav_item"><a href="#" class="nav_link">Explorer tous nos Univers</a></li>
+                </ul>
+            </div>
+    
+            <div class="burger_menu" id="openBtn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>    
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Horaire</a></li>
-        </ul>
-    </nav>
-    <section class="parcours_sco">
-        <h2 class="title">Parcours scolaires</h2>
-        <ol>
-            <li>2023. Option web - Haute Ecole de la Province de Liège</li>
-            <li>2021. Architecture - Université de Liège</li>
-            <li>2016. Option science économique et langues étrangères - Athénée Royal de Herstal</li>
-        </ol>
-    </section>
-    <section class="experiences">
-        <h2 class="title">Expériences</h2>
-        <p>DERNIEREMENT</p>
-    <ol>
-        <li>2022-2023. Technicienne de surface (Center Park et Primark)</li>
-        <li>2019-2021. Traductrice (Sous-titrage sur Youtube)</li>
-        <li>2018-2019. Préparations de Commande (Vente de gaufres)</li>
-    </ol>
-    </section>
-    <section class="coordonnees">
-        <h2 class="title">Coordonnées</h2>
-        <ol>
-            <li>04 71 32 63 08</li>
-            <li>serencobs@gmail.com</li>
-            <li>rue de Herstal 12B 4680 Hermée</li>
-        </ol>
+    
+    <main>
+    <section class="intro"> 
+        <h1>Seren Coban</h1>
+        <p>Je suis une étudiante de 20 ans en option web à la HEPL.</p>
     </section>
 
-    <aside>
+    <article class="parcours-sco">
+        <h2>Parcours scolaires</h2>
+        <ol class="timeline">
+            <li>
+                <img src="images/hepl-logo.jpg" alt="Icône Haute Ecole de la Province de Liège">
+                2023. Option web - Haute École de la Province de Liège
+            </li>
+            <li>
+                <img src="images/ulige-logo.jpg" alt="Icône Université de Liège">
+                2021. Architecture - Université de Liège
+            </li>
+            <li>
+                <img src="images/arh-logo.png" alt="Icône Athénée Royal de Herstal">
+                2016. Option sciences économiques et langues étrangères - Athénée Royal de Herstal
+            </li>
+        </ol>
+    </article>
+
+    <article class="experiences">
+        <h2>Expériences</h2>
+        <p class="info_text">Les dernières expériences de Seren Coban</p>
+        <div class="experience_container">
+            <div class="img_experience">
+                <img src="images/study.jpg" alt="une fille qui étudie">
+            </div>
+            <ol>
+                <li>2022-2023. Technicienne de surface</li>
+                <li>2019-2021. Traductrice</li>
+                <li>2018-2019. Préparations de Commande</li>
+            </ol>
+        </div>
+
+        
+    </article>
+
+    <article class="coordonnees">
+        <h2>Coordonnées</h2>
+        <p class="info_text">Contacter Seren Coban</p>
+        <div class="coordonnees_container">
+            <div class="img_coordonnees">
+                <img src="images/coordonnees.jpg" alt="Icon d'un message">
+            </div>
+            <ol>
+                <li>04 71 32 63 08 - serencobs@gmail.com</li>
+                <li>Rue de Herstal 12B 4680 Hermée</li>
+            </ol>
+        </div>  
+    </article>
+
+    <article class="passions">
+        <h2>Passions</h2>
+        <p class="info_text">Découvrez les passe temps de Seren Coban</p>
+        <div class="passions_container">
+            <ul>
+                <li><img src="images/volleyball.png" alt="">Jouer au volleyball</li>
+                <li><img src="images/reading.png" alt=""> Lire des romans</li>
+                <li><img src="images/langues.jpg" alt="">Etudier les langues</li>
+                <li><img src="images/gaming.png" alt="">Jouer aux jeux vidéos</li>
+            </ul>
+        </div>
+    </article>
+
+    <aside class="langue">
         <h2>Langues</h2>
-        <div>
-            <p>Francais</p>
-            <p>Niveau</p>
+        <p class="info_text">Les langues couramment parlées de Seren Coban</p>
+        <div class="langues_container">
+            <ul>
+                <li>
+                    <img src="images/france.png" alt="">
+                    <p>Français</p>
+                    <p>Niveau</p>
+                </li>
+    
+                <li>
+                    <img src="images/uk.png" alt="">
+                    <p>Anglais</p>
+                    <p>Niveau</p>
+                </li>
+    
+                <li>
+                    <img src="images/turkiye.jpg" alt="">
+                    <p>Turc</p>
+                    <p>Niveau</p>
+                </li>    
+            </ul>
         </div>
-        <div>
-            <p>Anglais</p>
-            <p>Niveau</p>
-        </div>
-        <div>
-            <p>Tirc</p>
-            <p>Niveau</p>
-        </div>
+        
+
     </aside>
-    <aside>
+
+    <aside class="competence">
         <h2>Compétences</h2>
+        <p class="info_text">Les points forts de Seren Coban</p>
+        <div class="competences_container">
+            <ul>
+                <li>
+                    <img src="images/frontend.png" alt="">
+                    <p>Front-end</p>
+        <p>HTML, CSS, JS</p>
+                </li>
+                <li>
+                    <img src="images/backend.png" alt="">
+                    <p>Back-end</p>
+        <p>PHP, SQL </p>
+                </li>
+
+                <li>
+                    <img src="images/graphic-design.jpg" alt="">
+                    <p>Graphic Design</p>
+        <p>Illustrator, Photopshop</p>
+                </li>
+            </ul>
+        
+        </div>
+
     </aside>
+
+</main>
+
+    <!--Seulement mobile-->
+    <div class="container__song">
+        <div class="container__left__song">
+            <div class="current__image">
+                <img src="" alt="">
+            </div>
+            <div class="currently__playing">
+                <p>Option web</p>
+                <p>Haute Ecole de la Province de Liège</p>
+            </div>
+        </div>
+        <div class="container__middle__song">
+            <div>
+                <button class="previous__song"></button>
+                <button class="play__song"></button>
+                <button class="next__song"></button>
+            </div>
+            <div class="slider">
+                <p class="timer"></p>
+                <div></div>
+                <p class="time_remaining"></p>
+
+            </div>
+
+        </div>
+        
+    </div>
 </body>
 </html>
