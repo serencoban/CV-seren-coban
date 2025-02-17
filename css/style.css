@@ -1,16 +1,219 @@
-body{
-    background-color: #0f0d13;
-    color: aliceblue;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
     font-family: "Inter", serif;
-    
 }
 
-.section{
-    background-color: darkgreen;
+
+.img_coordonnees img, .timeline img, .{
+    border-radius: 5px;
+}
+
+.intro{
+    position: absolute;
+    top: 235px;
+    background-color:transparent;
+}
+
+.image-cv{
+    background-image: url(../images/cv-picture.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 40vh;
+    width: 100%;
+   
+}
+
+.experience_container{
+    background-color: #1B191F ;
+    overflow: hidden;  /* permet de contenir l'img dans le background */
+}
+
+.coordonnees_container{
+   overflow: hidden;
+}
+
+
+.img_experience{
+    float: left;
+    padding-right: 15px;
+}
+
+.img_coordonnees{
+    float: left;
+    padding-right: 15px;
+}
+
+.competences_container img{
+    border-radius: 50%;
+}
+
+.passions_container ul, .langues_container ul, .competences_container ul{
+    display: flex;
+    justify-content: baseline;
+    gap: 5px;
+}
+
+.competences_container li{
+    display: flex;
+    flex-direction: column;  /* Met l'image au-dessus du texte */
+    text-align: center;  /* Centre le texte */
+}
+
+.competences_container li p:first-of-type{
+    padding-top: 10px;
+}
+.competences_container li p:nth-of-type(2), .langues_container li p:nth-of-type(2){
+    font-size: 14px;
+    color: #B9B9B9;
+}
+
+body{
+    position: relative;
+    background-color: #0f0d13;
+}
+
+main{
+    padding: 0 10px;
+}
+article, aside{
+    margin-top: 30px;
+}
+h1{
+    
+    font-family: "Montserrat", serif;
+    font-size: 40px;
+
+}
+
+h2{
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+.info_text{
+    padding-bottom: 15px;
+    color: #B9B9B9;
+}
+
+li {
+    list-style: none;
     padding-bottom: 10px;
 }
-
-.title{
-    font-size: 30px;
+li, p{
+    font-size: 16px;
+    font-weight: 300;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+.logo_deezer{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+}
+
+.navmenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav_link {
+    transition: 0.3s ease-in-out;
+}
+
+.nav_link:hover {
+    color: blueviolet;
+}
+
+/* Burger menu */
+.burger_menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .burger_menu {
+        display: block;
+    }
+
+    .burger_menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger_menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger_menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+ .navmenu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #1E1E1E;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        padding: 20px 0;
+    }
+
+    .nav_item {
+        margin: 16px 0;
+    }
+
+    .navmenu.active {
+        left: 0;
+    }
+
+
+    .timeline {
+        list-style: none; /* Supprime la numérotation automatique */
+        padding-left: 0;
+    }
+    
+    .timeline li {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Espacement entre l'icône et le texte */
+        font-size: 16px;
+    }
+    
+    .timeline li img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+    }
