@@ -9,7 +9,7 @@
 }
 
 
-.img_coordonnees img, .timeline img, .{
+.coordonnees_container img, .timeline img, .passions_container img, .langues_container img{
     border-radius: 5px;
 }
 
@@ -39,12 +39,7 @@
 }
 
 
-.img_experience{
-    float: left;
-    padding-right: 15px;
-}
-
-.img_coordonnees{
+.experience_container img, .coordonnees_container img {
     float: left;
     padding-right: 15px;
 }
@@ -150,6 +145,7 @@ a {
 .burger_menu {
     display: none;
     cursor: pointer;
+
 }
 
 .bar {
@@ -184,7 +180,7 @@ a {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: #1E1E1E;
+        
         width: 100%;
         text-align: center;
         transition: 0.3s ease-in-out;
