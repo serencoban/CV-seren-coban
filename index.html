@@ -13,6 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Coban Seren</title>
+    <meta name="author" content="Seren Coban">
+    <meta name="description" content="Mon cv inspiré du site web Deezer">
+    <meta name="keywords" content="Seren coban, Développeur web, cv">
     <link rel="stylesheet" href="css/style.css"> 
     <script defer src="js/script.js"></script>
     
@@ -24,12 +27,22 @@
         
         <nav class="navbar">
             <h2 class="hidden"></h2>
-            <div class="image-cv"></div>
+            <div class="image-cv">
+               
+            </div>
             <a href="#">
                 <img class="logo_deezer" src="images/logo_deezer.svg" alt="Logo Deezer">
             </a>
-            
-            <div id="sidenav" class="off_screen_menu navmenu">
+
+            <input class="checkbox_toggle" type="checkbox" id="checkbox_toggle">
+            <label class="burger-wrapper" for="checkbox_toggle" id="burger">Menu
+              <svg width="32" height="32" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+                <path class="line line2" d="M 20,50 H 80"></path>
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+              </svg>
+            </label>
+            <div class="sidenav">
                 <ul>
                     <li class="nav_item"><a href="#" class="nav_link">Connexion</a></li>
                     <li class="nav_item"><a href="#" class="nav_link">Inscription</a></li>
@@ -53,19 +66,22 @@
         <p>Je suis une étudiante de 20 ans en option web à la HEPL.</p>
     </section>
 
+    <div class="articles_container">
+
+    
     <article class="parcours-sco">
         <h2>Parcours scolaires</h2>
         <ol class="timeline">
             <li>
-                <img src="images/hepl-logo.jpg" alt="Icône Haute Ecole de la Province de Liège">
+                <img src="images/hepl-logo.jpg" alt="Logo Haute Ecole de la Province de Liège">
                 2023. Option web - Haute École de la Province de Liège
             </li>
             <li>
-                <img src="images/ulige-logo.jpg" alt="Icône Université de Liège">
+                <img src="images/uliege-logo.jpg" alt="Logo Université de Liège">
                 2021. Architecture - Université de Liège
             </li>
             <li>
-                <img src="images/arh-logo.png" alt="Icône Athénée Royal de Herstal">
+                <img src="images/arh-logo.jpg" alt="Logo Athénée Royal de Herstal">
                 2016. Option sciences économiques et langues étrangères - Athénée Royal de Herstal
             </li>
         </ol>
@@ -75,9 +91,7 @@
         <h2>Expériences</h2>
         <p class="info_text">Les dernières expériences de Seren Coban</p>
         <div class="experience_container">
-            <div class="img_experience">
                 <img src="images/study.jpg" alt="une fille qui étudie">
-            </div>
             <ol>
                 <li>2022-2023. Technicienne de surface</li>
                 <li>2019-2021. Traductrice</li>
@@ -92,29 +106,44 @@
         <h2>Coordonnées</h2>
         <p class="info_text">Contacter Seren Coban</p>
         <div class="coordonnees_container">
-            <div class="img_coordonnees">
                 <img src="images/coordonnees.jpg" alt="Icon d'un message">
-            </div>
             <ol>
-                <li>04 71 32 63 08 - serencobs@gmail.com</li>
+                <li>04/71 32 63 08 - serencobs@gmail.com</li>
                 <li>Rue de Herstal 12B 4680 Hermée</li>
             </ol>
         </div>  
     </article>
 
-    <article class="passions">
+
+    <aside class="passions">
         <h2>Passions</h2>
         <p class="info_text">Découvrez les passe temps de Seren Coban</p>
         <div class="passions_container">
             <ul>
-                <li><img src="images/volleyball.png" alt="">Jouer au volleyball</li>
-                <li><img src="images/reading.png" alt=""> Lire des romans</li>
-                <li><img src="images/langues.jpg" alt="">Etudier les langues</li>
-                <li><img src="images/gaming.png" alt="">Jouer aux jeux vidéos</li>
+                <li>
+                    <img src="images/volleyball.png" alt="">
+                    <p>Jouer au volleyball</p>
+                </li>
+                <li>
+                    <img src="images/reading.png" alt=""> 
+                    <p>Lire des romans</p>
+                </li>
+                <li>
+                    <img src="images/langues.jpg" alt="">
+                    <p>Etudier les langues</p>
+                </li>
+                <li>
+                    <img src="images/gaming.png" alt="">
+                    <p>Jouer aux jeux vidéos</p>
+                </li>
             </ul>
         </div>
-    </article>
+    </aside>
 
+</div>
+
+
+    <div class="aside_container">
     <aside class="langue">
         <h2>Langues</h2>
         <p class="info_text">Les langues couramment parlées de Seren Coban</p>
@@ -138,10 +167,11 @@
                     <p>Niveau</p>
                 </li>    
             </ul>
-        </div>
-        
+        </div>  
 
     </aside>
+
+
 
     <aside class="competence">
         <h2>Compétences</h2>
@@ -151,18 +181,18 @@
                 <li>
                     <img src="images/frontend.png" alt="">
                     <p>Front-end</p>
-        <p>HTML, CSS, JS</p>
+                    <p>HTML, CSS, JS</p>
                 </li>
                 <li>
                     <img src="images/backend.png" alt="">
                     <p>Back-end</p>
-        <p>PHP, SQL </p>
+                    <p>PHP, SQL </p>
                 </li>
 
                 <li>
                     <img src="images/graphic-design.jpg" alt="">
                     <p>Graphic Design</p>
-        <p>Illustrator, Photopshop</p>
+                    <p>Illustrator, Photopshop</p>
                 </li>
             </ul>
         
@@ -170,9 +200,11 @@
 
     </aside>
 
+</div>
+
 </main>
 
-    <!--Seulement mobile-->
+    <!--Seulement pc-->
     <div class="container__song">
         <div class="container__left__song">
             <div class="current__image">
@@ -193,11 +225,8 @@
                 <p class="timer"></p>
                 <div></div>
                 <p class="time_remaining"></p>
-
             </div>
-
         </div>
-        
     </div>
 </body>
 </html>
