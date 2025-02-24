@@ -27,12 +27,37 @@
         
         <nav class="navbar">
             <h2 class="hidden"></h2>
-            <div class="image-cv">
-               
+
+            <div class="search_bar">
+                <form method="get" accept="">
+                    <div class="input_container">
+                        <svg class="search_icon" width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M42 42L33.3 33.3M38 22C38 30.8366 30.8366 38 22 38C13.1634 38 6 30.8366 6 22C6 13.1634 13.1634 6 22 6C30.8366 6 38 13.1634 38 22Z" />
+                        </svg>
+                        <input type="search" name="search_btn" id="search_btn" placeholder="Job, étudiant, école,...">
+                        <button type="submit">Search</button>
+                    </div> 
+                </form>
+
+                <div class="connexion_container">
+                    <a href="#" class="decoration_link">Offres</a>
+                    <button class="connexion_btn">Connexion</button>
+                    <button class="inscription_btn">Inscription</button>
+                </div>
             </div>
-            <a href="#">
-                <img class="logo_deezer" src="images/logo_deezer.svg" alt="Logo Deezer">
-            </a>
+
+
+
+            <div class="image-cv"></div>
+            <a href="#"><img class="logo_deezer" src="images/logo_deezer.svg" alt="Logo Deezer"></a>
+
+            <nav class="sidebar">
+                <h2 class="hidden"></h2>
+                    <a href="#">Accueil</a>
+                    <a href="#">Explorer</a>
+                    <p>Playlist</p>
+                    <a href="#">+ Créer une playlist</a>
+            </nav>
 
             <input class="checkbox_toggle" type="checkbox" id="checkbox_toggle">
             <label class="burger-wrapper" for="checkbox_toggle" id="burger">Menu

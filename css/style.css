@@ -8,23 +8,23 @@
     font-family: "Inter", "Arial", sans-serif;
 }
 
-input, label,.sidenav, .burger_menu{
-    display: none;
-}
+
 
 .coordonnees_container img, .timeline img, .passions_container img, .langues_container img{
     border-radius: 5px;
 }
+
 .articles_container{
     position: relative;
 }
 
 .intro{
     position: absolute;
-    top: 250px; /* Toujours 10px sous le .articles_container */
+    top: 270px; 
     left: 0;
     width: 100%;  
 }
+
 
 .image-cv{
     background-image: url(../images/cv-picture.png);
@@ -32,11 +32,8 @@ input, label,.sidenav, .burger_menu{
     margin: 0;
     padding: 0;
     height: 40vh;
-    width: 100%;
-    
-   
+    width: 100%;   
 }
-
 
 
 body{
@@ -91,6 +88,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 .experience_container{
@@ -174,21 +172,162 @@ a {
         display: none;
     }
 
+    .sidebar{
+        display: none;
+    }
+
+    .search_bar{
+        display: none;
+    }
+
+    
+
 
 }
 
 @media (min-width:430px){
     .timeline, .coordonnees_container{
         background-color: #1B191F;
+        padding: 16px;
     }
 
     .info_text{
         display: none;
     }
 
-    .image-cv{
-        display: none;
+    .intro{
+        position: absolute;
+        top: 100px;
+        left: 500px;
+
     }
+
+    main{
+        margin-left: 200px;
+    }
+
+    .image-cv {
+        width: 278px; /* Taille du cercle */
+        height: 278px; /* Taille du cercle */
+        border-radius: 50%; /* Rend l'image circulaire */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        left: 200px; /* Ajuste selon ton besoin */
+        top: 20px;  /* Ajuste selon ton besoin */
+        }
+
+   
+    .sidebar {
+        height: 100%;
+        width: 188px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color:#1B191F;
+        
+        padding-top: 50px;
+    }
+          
+    .sidebar p, .sidebar a{
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #818181;
+        display: block;
+    }
+
+
+    .search_bar{
+    display: flex;
+    justify-content: flex-start; /* Aligné à gauche */
+    align-items: center;
+    margin-left: 200px;
+    padding: 10px;
+    width: calc(100% - 200px); /* Ajuste la largeur pour ne pas dépasser */
+    }
+
+    .input_container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 250px; /* Ajuste la largeur selon tes besoins */
+        color: white;
+    }
+
+    .search_icon {
+        position: absolute;
+        left: 10px; 
+        width: 20px;
+        height: 20px;
+        pointer-events: none; /* Permet de cliquer sur l'input sans être bloqué par le SVG */
+    }
+
+    #search_btn {
+        width: 100%;
+        padding: 10px 10px 10px 40px; /* Ajoute du padding à gauche pour éviter que le texte passe sous l'icône */
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    path{
+        stroke: white;
+        stroke-width: 4;
+        fill: none;
+    }
+
+   
+    form input{
+        background-color: #515050;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 5px;
+        
+    }
+
+
+    form button{
+        position: absolute;
+        top: -999px;
+        left: -999px;
+        width: 0px;
+        height: 0px;
+    }
+
+    .connexion_container {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Espacement entre les éléments */
+        margin-left: auto; /* Pousse les éléments vers la droite */
+    }
+
+
+    .decoration_link{
+        text-decoration: underline;
+    }
+
+.connexion_btn{
+    background-color:  transparent;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.inscription_btn {
+    background-color: #A238FF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px ;
+}
+
+
+
+
+
+
+    
 }
 
 
@@ -208,6 +347,10 @@ a {
         display: flex;
        
     }
+
+    main{
+        margin-left: 200px;
+    }
 }
 
 
@@ -217,7 +360,7 @@ a {
         grid-template-columns: 2fr 1fr; /* Deux colonnes : 2/3 pour les articles, 1/3 pour aside_container */
         gap: 40px;
         max-width: 1200px;
-        margin: 0 auto; /* Centre le contenu */
+        margin-left: 200px;
         align-items: start;
     }
 
