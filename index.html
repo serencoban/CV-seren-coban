@@ -41,8 +41,8 @@
 
                 <div class="connexion_container">
                     <a href="#" class="decoration_link">Offres</a>
-                    <button class="connexion_btn">Connexion</button>
-                    <button class="inscription_btn">Inscription</button>
+                    <a href="#" class="connexion_btn">Connexion</a>
+                    <a href="#" class="inscription_btn">Inscription</a>
                 </div>
             </div>
 
@@ -176,20 +176,26 @@
             <ul>
                 <li>
                     <img src="images/france.png" alt="">
-                    <p>Français</p>
-                    <p>Niveau</p>
+                    <div class="language_info">
+                        <p>Français</p>
+                        <p>Niveau</p>
+                    </div>
                 </li>
     
                 <li>
                     <img src="images/uk.png" alt="">
-                    <p>Anglais</p>
-                    <p>Niveau</p>
+                    <div class="language_info">
+                        <p>Anglais</p>
+                        <p>Niveau</p>
+                    </div>
                 </li>
     
                 <li>
                     <img src="images/turkiye.jpg" alt="">
-                    <p>Turc</p>
-                    <p>Niveau</p>
+                    <div class="language_info">
+                        <p>Turc</p>
+                        <p>Niveau</p>
+                    </div>
                 </li>    
             </ul>
         </div>  
@@ -205,19 +211,25 @@
             <ul>
                 <li>
                     <img src="images/frontend.png" alt="">
-                    <p>Front-end</p>
-                    <p>HTML, CSS, JS</p>
+                    <div class="competences_info">
+                        <p>Front-end</p>
+                        <p>HTML, CSS, JS</p>
+                    </div>
                 </li>
                 <li>
                     <img src="images/backend.png" alt="">
-                    <p>Back-end</p>
-                    <p>PHP, SQL </p>
+                    <div class="competences_info">
+                        <p>Back-end</p>
+                        <p>PHP, SQL </p>
+                    </div>
                 </li>
 
                 <li>
                     <img src="images/graphic-design.jpg" alt="">
-                    <p>Graphic Design</p>
-                    <p>Illustrator, Photopshop</p>
+                    <div class="competences_info">
+                        <p>Graphic Design</p>
+                        <p>Illustrator, Photopshop</p>
+                    </div>
                 </li>
             </ul>
         
@@ -230,26 +242,57 @@
 </main>
 
     <!--Seulement pc-->
-    <div class="container__song">
-        <div class="container__left__song">
-            <div class="current__image">
+    <div class="container_song">
+        <div class="container_left_song">
+            <div class="current_image">
                 <img src="" alt="">
             </div>
-            <div class="currently__playing">
+            <div class="currently_playing">
                 <p>Option web</p>
                 <p>Haute Ecole de la Province de Liège</p>
             </div>
         </div>
-        <div class="container__middle__song">
-            <div>
-                <button class="previous__song"></button>
-                <button class="play__song"></button>
-                <button class="next__song"></button>
+
+        <div class="container_middle_song">
+
+            <div class="play_btn">
+
+                <button class="previous_song">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.5 18V6H18.5V18H16.5ZM5.5 18V6L14.5 12L5.5 18Z" fill="#1D1B20"/>
+                        </svg>
+                         </button>
+
+                <button class="play_song">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 19V5L19 12L8 19Z" fill="#1D1B20"/>
+                        </svg>
+                        
+                        
+                        
+                </button>
+                <button class="next_song">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.5 18V6H5.5V18H7.5ZM18.5 18V6L9.5 12L18.5 18Z" fill="#1D1B20"/>
+                        </svg>
+                        
+                        
+                </button>
             </div>
-            <div class="slider">
-                <p class="timer"></p>
-                <div></div>
-                <p class="time_remaining"></p>
+
+            <div class="slider_container">
+                <div class="timer_start">
+                    <p>00:00</p>
+                </div>
+                
+                <div class="slider_track">
+                    <div class="slider"></div>
+                </div>
+                
+                <div class="timer_end">
+                    <p></p>
+                </div>
+                
             </div>
         </div>
     </div>

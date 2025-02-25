@@ -166,9 +166,10 @@ a {
 /************* PC VERSION *******/
 
 
+/******** inf à 430px *************/
 
 @media (max-width:430px) {
-    .container__song {
+    .container_song {
         display: none;
     }
 
@@ -179,11 +180,10 @@ a {
     .search_bar{
         display: none;
     }
-
-    
-
-
 }
+
+
+/******** sup à 430px *************/
 
 @media (min-width:430px){
     .timeline, .coordonnees_container{
@@ -225,8 +225,8 @@ a {
         top: 0;
         left: 0;
         background-color:#1B191F;
-        
         padding-top: 50px;
+    
     }
           
     .sidebar p, .sidebar a{
@@ -244,7 +244,6 @@ a {
     align-items: center;
     margin-left: 200px;
     padding: 10px;
-    width: calc(100% - 200px); /* Ajuste la largeur pour ne pas dépasser */
     }
 
     .input_container {
@@ -271,7 +270,7 @@ a {
         outline: none;
     }
 
-    path{
+    .search_icon path{
         stroke: white;
         stroke-width: 4;
         fill: none;
@@ -324,12 +323,59 @@ a {
 
 
 
+.langues_container ul {
+    display: flex;
+    flex-direction: column; /* Colonne pour les éléments */
+    gap: 20px; /* Espacement entre les éléments */
+    padding: 0;
+    list-style: none;
+}
+
+.langues_container ul li {
+    display: flex;
+    align-items: center; /* Alignement vertical */
+    gap: 15px; /* Espacement entre l'image et les paragraphes */
+}
+
+.langues_container ul li img {
+    width: 40px; /* Ajuste la taille de l'image */
+    height: auto;
+}
+
+.language_info {
+    display: flex;
+    flex-direction: column; /* Les deux paragraphes l'un sous l'autre */
+    text-align: left;
+}
+
+.navbar{
+    position: relative;
+}
+.sidenav{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.container_song{
+  display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.previous_icon path{
+    fill: black;
+
+}
+
 
 
 
     
 }
 
+/******** entre 430 et 1200px *************/
 
 @media (min-width: 430px) and (max-width: 1200px) {
     .aside_container {
@@ -353,6 +399,8 @@ a {
     }
 }
 
+
+/******** sup à 1200px *************/
 
 @media (min-width: 1200px) {
     main {
