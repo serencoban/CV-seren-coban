@@ -14,13 +14,11 @@
     border-radius: 5px;
 }
 
-.articles_container{
-    position: relative;
-}
+
 
 .intro{
     position: absolute;
-    top: 270px; 
+    top: 350px; 
     left: 0;
     width: 100%;  
 }
@@ -53,7 +51,7 @@ article, aside{
 h1{
     font-family: "Montserrat", serif;
     font-size: 40px;
-
+    
 }
 
 h2{
@@ -89,6 +87,11 @@ a {
     top: 0;
     left: 0;
     z-index: 10;
+    
+}
+
+.logo_deezer path{
+    fill: white;
 }
 
 .experience_container{
@@ -99,7 +102,7 @@ a {
 }
 
 .coordonnees_container{
-   overflow: hidden;
+    overflow: hidden;
 }
 
 
@@ -118,70 +121,125 @@ a {
     gap: 5px;
 }
 
-.competences_container li{
-    display: flex;
-    flex-direction: column;  /* Met l'image au-dessus du texte */
-    text-align: center;  /* Centre le texte */
-}
-
-.passions_container, .langues_container, .competences_container{
-    overflow: auto;
-  white-space: nowrap;
-
-
-}
-
-
-.competences_container li p:first-of-type{
-    padding-top: 10px;
-}
 .competences_container li p:nth-of-type(2), .langues_container li p:nth-of-type(2), .coordonnees_container ol li:nth-of-type(2){
     font-size: 14px;
     color: #B9B9B9;
 }
-
-  /******* parcours scolaire *******/
-
-    .timeline {
-        list-style: none; 
-        padding-left: 0;
-    }
-    
-
-    .timeline li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
-    }
-    
-    .timeline li img {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-    }
+.timeline {
+    list-style: none; 
+    padding-left: 0;
+}
 
 
+.timeline li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
 
-/************* PC VERSION *******/
-
+.timeline li img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
 
 /******** inf à 430px *************/
 
 @media (max-width:430px) {
+    
+    .passions_container, .langues_container, .competences_container{
+        overflow: auto;
+        
+    }
     .container_song {
         display: none;
     }
-
+    
     .sidebar{
         display: none;
     }
-
+    
     .search_bar{
         display: none;
     }
+    
+    /***** burger menu */
+    
+    #menuToggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        user-select: none;
+    }
+    
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 3;
+    }
+    
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        background:  white;
+        border-radius: 3px;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #menuToggle input:checked ~ span:nth-child(2) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    #menuToggle input:checked ~ span:nth-child(3) {
+        opacity: 0;
+    }
+    
+    #menuToggle input:checked ~ span:nth-child(4) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .sidenav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background:#1B191F;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+    
+    .sidenav li {
+        margin: 20px 0;
+    }
+    
+    .sidenav a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    
+    #menuToggle input:checked ~ .sidenav {
+        transform: translateX(0);
+    }
 }
-
 
 /******** sup à 430px *************/
 
@@ -190,22 +248,50 @@ a {
         background-color: #1B191F;
         padding: 16px;
     }
-
+    
+    .sidenav{
+        display: none;
+    }
+    
     .info_text{
         display: none;
     }
-
+    
     .intro{
         position: absolute;
         top: 100px;
         left: 500px;
-
+        
     }
-
+    
     main{
         margin-left: 200px;
     }
-
+    
+    .home_icon a::before{
+        content: url(/images/home.svg);
+        display: inline-block;
+        padding-right: 5px;
+        vertical-align: middle;
+        font-weight: 900;
+    }
+    
+    .explorer_icon a::before{
+        content: url(/images/boussole.svg);
+        display: inline-block;
+        padding-right: 5px;
+        vertical-align: middle;
+        font-weight: 900;
+    }
+    
+    .playlist_icon a::before{
+        content: url(/images/playlist.svg);
+        display: inline-block;
+        padding-right: 5px;
+        vertical-align: middle;
+        font-weight: 900;
+    }
+    
     .image-cv {
         width: 278px; /* Taille du cercle */
         height: 278px; /* Taille du cercle */
@@ -215,9 +301,8 @@ a {
         position: relative;
         left: 200px; /* Ajuste selon ton besoin */
         top: 20px;  /* Ajuste selon ton besoin */
-        }
-
-   
+    }
+    
     .sidebar {
         height: 100%;
         width: 188px;
@@ -226,26 +311,26 @@ a {
         left: 0;
         background-color:#1B191F;
         padding-top: 50px;
-    
+        
     }
-          
+    
     .sidebar p, .sidebar a{
         padding: 6px 8px 6px 16px;
         text-decoration: none;
         font-size: 14px;
-        color: #818181;
+        font-weight: 500;
+        color: white;
         display: block;
     }
-
-
+    
     .search_bar{
-    display: flex;
-    justify-content: flex-start; /* Aligné à gauche */
-    align-items: center;
-    margin-left: 200px;
-    padding: 10px;
+        display: flex;
+        justify-content: flex-start; /* Aligné à gauche */
+        align-items: center;
+        margin-left: 200px;
+        padding: 10px;
     }
-
+    
     .input_container {
         position: relative;
         display: flex;
@@ -253,7 +338,7 @@ a {
         width: 250px; /* Ajuste la largeur selon tes besoins */
         color: white;
     }
-
+    
     .search_icon {
         position: absolute;
         left: 10px; 
@@ -261,7 +346,7 @@ a {
         height: 20px;
         pointer-events: none; /* Permet de cliquer sur l'input sans être bloqué par le SVG */
     }
-
+    
     #search_btn {
         width: 100%;
         padding: 10px 10px 10px 40px; /* Ajoute du padding à gauche pour éviter que le texte passe sous l'icône */
@@ -269,14 +354,13 @@ a {
         font-size: 16px;
         outline: none;
     }
-
+    
     .search_icon path{
         stroke: white;
         stroke-width: 4;
         fill: none;
     }
-
-   
+    
     form input{
         background-color: #515050;
         border: none;
@@ -285,8 +369,7 @@ a {
         border-radius: 5px;
         
     }
-
-
+    
     form button{
         position: absolute;
         top: -999px;
@@ -294,84 +377,79 @@ a {
         width: 0px;
         height: 0px;
     }
-
+    
     .connexion_container {
         display: flex;
         align-items: center;
         gap: 15px; /* Espacement entre les éléments */
         margin-left: auto; /* Pousse les éléments vers la droite */
     }
-
-
+    
     .decoration_link{
         text-decoration: underline;
     }
+    
+    .connexion_btn{
+        background-color:  transparent;
+        border: 1px solid grey;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    
+    .inscription_btn {
+        background-color: #A238FF;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px ;
+    }
+    
+    .langues_container ul, .competences_container ul {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px; 
+        padding: 0;
+        list-style: none;
+    }
+    
+    .langues_container ul li, .competences_container ul li {
+        display: flex;
+        align-items: center; 
+        gap: 15px; 
+    }
+    
+    .langues_container ul li img, .competences_container ul li img {
+        width: 40px;
+        height: auto;
+    }
+    
+    .language_info , .competences_info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .navbar{
+        position: relative;
+    }
 
-.connexion_btn{
-    background-color:  transparent;
-    border: 1px solid grey;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.inscription_btn {
-    background-color: #A238FF;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px ;
-}
-
-
-
-.langues_container ul {
-    display: flex;
-    flex-direction: column; /* Colonne pour les éléments */
-    gap: 20px; /* Espacement entre les éléments */
-    padding: 0;
-    list-style: none;
-}
-
-.langues_container ul li {
-    display: flex;
-    align-items: center; /* Alignement vertical */
-    gap: 15px; /* Espacement entre l'image et les paragraphes */
-}
-
-.langues_container ul li img {
-    width: 40px; /* Ajuste la taille de l'image */
-    height: auto;
-}
-
-.language_info {
-    display: flex;
-    flex-direction: column; /* Les deux paragraphes l'un sous l'autre */
-    text-align: left;
-}
-
-.navbar{
-    position: relative;
-}
-.sidenav{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.container_song{
-  display: flex;
-    text-align: center;
-    justify-content: center;
-    background-color: aqua;
-}
-
-.previous_icon path{
-    fill: black;
-
-}
-
-
-
-
+    .sidenav{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .container_song{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background-color: aqua;
+        position: relative;
+        z-index: 1;    
+    }
+    
+    .previous_icon path{
+        fill: black;       
+    }
     
 }
 
@@ -383,19 +461,29 @@ a {
         grid-template-columns: 1fr 1fr; 
         gap: 20px;
     }
-
+    
     .aside_container img{
         width: 46px;
         height: 46px;
     }
-
+    
     .langues_container p, .competences_container p{
         display: flex;
-       
+        
     }
-
+    
     main{
-        margin-left: 200px;
+        margin-left: 150px;
+    }
+    
+    .sidebar{
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color:#1B191F;
+        padding-top: 50px;
     }
 }
 
@@ -405,28 +493,25 @@ a {
 @media (min-width: 1200px) {
     main {
         display: grid;
-        grid-template-columns: 2fr 1fr; /* Deux colonnes : 2/3 pour les articles, 1/3 pour aside_container */
+        grid-template-columns: 2fr 1fr;
         gap: 40px;
         max-width: 1200px;
         margin-left: 200px;
         align-items: start;
     }
-
+    
     .articles_container {
         display: flex;
-        flex-direction: column; /* Les articles restent empilés */
+        flex-direction: column;
         gap: 20px;
     }
-
+    
     .aside_container {
         display: flex;
-        flex-direction: column; /* Langues et Compétences restent empilés */
+        flex-direction: column; 
         gap: 20px;
     }
 
-    .passions {
-        grid-column: span 2; /* Prend toute la largeur sous les deux colonnes */
-    }
     .aside_container img{
         width: 46px;
         height: 46px;

@@ -28,6 +28,8 @@
         <nav class="navbar">
             <h2 class="hidden"></h2>
 
+
+        <!--rechercher + 3 bouttons-->
             <div class="search_bar">
                 <form method="get" accept="">
                     <div class="input_container">
@@ -39,49 +41,54 @@
                     </div> 
                 </form>
 
-                <div class="connexion_container">
+                <ul class="connexion_container">
                     <a href="#" class="decoration_link">Offres</a>
                     <a href="#" class="connexion_btn">Connexion</a>
                     <a href="#" class="inscription_btn">Inscription</a>
-                </div>
+                </ul>
             </div>
 
 
-
+<!--image cv + logo deezer-->
             <div class="image-cv"></div>
-            <a href="#"><img class="logo_deezer" src="images/logo_deezer.svg" alt="Logo Deezer"></a>
+            <a href="#">
+                <svg class="logo_deezer" xmlns="http://www.w3.org/2000/svg" width="127" height="20" >
+                    <path  d="M0 0h10.065c6.232 0 10.639 4.13 10.639 10s-4.407 10-10.639 10H0V0Zm7.823 14.597h1.825c1.956 0 2.999-1.298 2.999-4.597 0-3.299-1.043-4.597-3-4.597H7.824v9.194ZM40.153 20H23.62V0h16.532v5.403h-8.735v2.311h8.213v4.416h-8.213v2.467h8.735V20Zm20.31 0H43.93V0h16.532v5.403h-8.736v2.311h8.214v4.416h-8.214v2.467h8.736V20Zm66.159 0c-1.126-3.058-2.702-6.321-4.821-9.979 2.479-.724 3.961-2.28 3.961-4.67 0-3.637-3.364-5.351-8.683-5.351h-10.952v20h7.823v-8.273c1.738 2.916 3.018 5.667 3.859 8.273h8.813ZM113.95 8.935V5.403h2.712c1.147 0 1.799.623 1.799 1.766s-.652 1.766-1.799 1.766h-2.712ZM102.328 20H85.797V0h16.531v5.403h-8.735v2.311h8.214v4.416h-8.214v2.467h8.735V20ZM64.397 5.403h8.071c-3.349 2.729-6.105 5.82-8.228 9.194V20h17.758v-5.403h-8.876c2.034-2.947 4.876-5.882 8.876-9.194V0H64.397v5.403Z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
 
+
+            <!--side bar -->
             <nav class="sidebar">
                 <h2 class="hidden"></h2>
-                    <a href="#">Accueil</a>
-                    <a href="#">Explorer</a>
-                    <p>Playlist</p>
-                    <a href="#">+ Créer une playlist</a>
+                <ul>
+                    <li class="home_icon"><a href="#">Accueil</a></li>
+                    <li class="explorer_icon"><a href="#">Explorer</a></li>
+                    <li><p>Playlist</p></li>
+                    <li class="playlist_icon"><a href="#">Créer une playlist</a></li>
+                </ul>
+                    
             </nav>
 
-            <input class="checkbox_toggle" type="checkbox" id="checkbox_toggle">
-            <label class="burger-wrapper" for="checkbox_toggle" id="burger">Menu
-              <svg width="32" height="32" viewBox="0 0 100 100">
-                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
-                <path class="line line2" d="M 20,50 H 80"></path>
-                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
-              </svg>
-            </label>
-            <div class="sidenav">
-                <ul>
+
+            <!--Burger menu-->
+
+            <nav role="burgerMenu">
+                <div id="menuToggle">
+                  <input type="checkbox" id="menuCheckbox" />
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <ul class="sidenav">
                     <li class="nav_item"><a href="#" class="nav_link">Connexion</a></li>
                     <li class="nav_item"><a href="#" class="nav_link">Inscription</a></li>
                     <li class="nav_item"><a href="#" class="nav_link">Télécharger l’application</a></li>
                     <li class="nav_item"><a href="#" class="nav_link">Offres</a></li>
                     <li class="nav_item"><a href="#" class="nav_link">Explorer tous nos Univers</a></li>
-                </ul>
-            </div>
-    
-            <div class="burger_menu" id="openBtn">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>    
+                  </ul>
+                </div>
+              </nav>
+
         </nav>
     </header>
     
@@ -178,7 +185,7 @@
                     <img src="images/france.png" alt="">
                     <div class="language_info">
                         <p>Français</p>
-                        <p>Niveau</p>
+                        <p>Niveau C1</p>
                     </div>
                 </li>
     
@@ -186,7 +193,7 @@
                     <img src="images/uk.png" alt="">
                     <div class="language_info">
                         <p>Anglais</p>
-                        <p>Niveau</p>
+                        <p>Niveau B2</p>
                     </div>
                 </li>
     
@@ -194,7 +201,7 @@
                     <img src="images/turkiye.jpg" alt="">
                     <div class="language_info">
                         <p>Turc</p>
-                        <p>Niveau</p>
+                        <p>Niveau B1</p>
                     </div>
                 </li>    
             </ul>
@@ -286,7 +293,12 @@
                 </div>
                 
                 <div class="slider_track">
-                    <div class="slider"></div>
+                    <div class="slider">
+                        <svg width="266" height="1" viewBox="0 0 266 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line y1="0.5" x2="266" y2="0.5" stroke="black"/>
+                            </svg>
+                            
+                    </div>
                 </div>
                 
                 <div class="timer_end">
