@@ -8,50 +8,51 @@
     font-family: "Inter", "Arial", sans-serif;
 }
 
+main{
+    position: relative;
+    
+    display: flex;
+    flex-direction: column; /* Mobile first : affichage en colonne */
+    gap: 20px;  
+}
 
+time{
+    display: inline;
+    color: #B9B9B9;  
+}
 
 .coordonnees_container img, .timeline img, .passions_container img, .langues_container img{
     border-radius: 5px;
 }
 
 
-
 .intro{
     position: absolute;
-    top: 350px; 
+    top: -170px; 
     left: 0;
-    width: 100%;  
+    width: 100%;    
 }
-
 
 .image-cv{
     background-image: url(../images/cv-picture.png);
     background-size: cover;
-    margin: 0;
-    padding: 0;
+   
     height: 40vh;
     width: 100%;   
 }
-
 
 body{
     position: relative;
     background-color: #0f0d13;
 }
 
-main{
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column; /* Mobile first : affichage en colonne */
-    gap: 20px;
-}
 article, aside{
     margin-top: 30px;
 }
+
 h1{
     font-family: "Montserrat", serif;
     font-size: 40px;
-    
 }
 
 h2{
@@ -84,10 +85,9 @@ a {
 }
 .logo_deezer{
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    
+    top: 10px;
+    left: 10px;
+    z-index: 10;  
 }
 
 .logo_deezer path{
@@ -125,10 +125,6 @@ a {
     font-size: 14px;
     color: #B9B9B9;
 }
-.timeline {
-    list-style: none; 
-    padding-left: 0;
-}
 
 
 .timeline li {
@@ -144,6 +140,8 @@ a {
     object-fit: contain;
 }
 
+
+
 /******** inf à 430px *************/
 
 @media (max-width:430px) {
@@ -152,18 +150,24 @@ a {
         overflow: auto;
         
     }
-    .container_song {
+    .container_song, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
         display: none;
     }
-    
-    .sidebar{
-        display: none;
+
+    .contact_btn{
+        position: absolute;
+        top: 10px;
+        right: 70px;
+        background-color: #A238FF;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 7px ;
     }
+
+
     
-    .search_bar{
-        display: none;
-    }
-    
+
+
     /***** burger menu */
     
     #menuToggle {
@@ -244,24 +248,21 @@ a {
 /******** sup à 430px *************/
 
 @media (min-width:430px){
+    
     .timeline, .coordonnees_container{
         background-color: #1B191F;
         padding: 16px;
     }
     
-    .sidenav{
-        display: none;
-    }
-    
-    .info_text{
+    .sidenav,.info_text,#menuToggle  {
         display: none;
     }
     
     .intro{
         position: absolute;
-        top: 100px;
-        left: 500px;
-        
+        top: -300px;
+        left: 320px;  
+        max-width: 300px;
     }
     
     main{
@@ -293,14 +294,12 @@ a {
     }
     
     .image-cv {
-        width: 278px; /* Taille du cercle */
-        height: 278px; /* Taille du cercle */
-        border-radius: 50%; /* Rend l'image circulaire */
+        width: 278px;
+        height: 278px; 
+        border-radius: 50%; 
         background-size: cover;
         background-position: center;
-        position: relative;
-        left: 200px; /* Ajuste selon ton besoin */
-        top: 20px;  /* Ajuste selon ton besoin */
+        margin-top: 20px;
     }
     
     .sidebar {
@@ -327,8 +326,7 @@ a {
         display: flex;
         justify-content: flex-start; /* Aligné à gauche */
         align-items: center;
-        margin-left: 200px;
-        padding: 10px;
+        padding: 10px 0;
     }
     
     .input_container {
@@ -337,6 +335,7 @@ a {
         align-items: center;
         width: 250px; /* Ajuste la largeur selon tes besoins */
         color: white;
+        
     }
     
     .search_icon {
@@ -362,7 +361,7 @@ a {
     }
     
     form input{
-        background-color: #515050;
+        background-color: #29282d;
         border: none;
         outline: none;
         padding: 5px;
@@ -450,12 +449,41 @@ a {
     .previous_icon path{
         fill: black;       
     }
+
+    
+
+    .profile_nav:hover{
+        content: '';
+        text-decoration: underline;
+        color: #A238FF;
+
+    }
+
+
+    .contact_container{
+        display: flex;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .contact_btn{
+        background-color: #A238FF;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 7px ;
+    }
+
     
 }
 
 /******** entre 430 et 1200px *************/
 
 @media (min-width: 430px) and (max-width: 1200px) {
+
+    .header{
+        margin-left: 180px;
+
+    }
     .aside_container {
         display: grid;
         grid-template-columns: 1fr 1fr; 
@@ -473,7 +501,8 @@ a {
     }
     
     main{
-        margin-left: 150px;
+        margin-left: 160px;
+        min-width: 1200px;
     }
     
     .sidebar{
@@ -492,6 +521,7 @@ a {
 
 @media (min-width: 1200px) {
     main {
+        position: relative;
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 40px;
@@ -500,20 +530,32 @@ a {
         align-items: start;
     }
     
-    .articles_container {
+    .articles_container , .aside_container{
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
     
-    .aside_container {
-        display: flex;
-        flex-direction: column; 
-        gap: 20px;
-    }
-
     .aside_container img{
         width: 46px;
         height: 46px;
+    }
+
+    .profile_nav  {
+        position: absolute;
+        margin-bottom: 20px;
+        z-index: 10;
+    }
+
+    
+    .profile_nav a:hover{
+        content: '';
+        text-decoration: underline;
+        color: #A238FF;
+    }
+
+    .header{
+        margin-left: 200px;
+
     }
 }
