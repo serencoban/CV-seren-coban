@@ -9,10 +9,7 @@
 }
 
 main{
-    position: relative; 
-    display: flex;
-    flex-direction: column; /* Mobile first : affichage en colonne */
-    gap: 20px;  
+    position: relative;   
 }
 
 time{
@@ -25,18 +22,10 @@ time{
 }
 
 
-.intro{
-    position: absolute;
-    top: -100px; 
-    left: 0;
-    width: 100%;    
-}
-
 .image-cv{
     background-image: url(../images/cv-picture.png);
     background-size: cover;
-   
-    height: 40vh;
+    height: 35vh;
     width: 100%;   
 }
 
@@ -63,11 +52,6 @@ h2{
     display: none;
 }
 
-.info_text{
-    padding-bottom: 15px;
-    color: #B9B9B9;
-}
-
 li {
     list-style: none;
     padding-bottom: 20px;
@@ -82,12 +66,7 @@ a {
     color: white;
     text-decoration: none;
 }
-.logo_deezer{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;  
-}
+
 
 .logo_deezer path{
     fill: white;
@@ -95,7 +74,7 @@ a {
 
 .experience_container{
     background-color: #1B191F ;
-    overflow: hidden;  /* permet de contenir l'img dans le background */
+    overflow: hidden;
     display: flex;
     align-items: center;
     
@@ -104,13 +83,10 @@ a {
     overflow: hidden;
 }
 
-
 .experience_container img, .coordonnees_container img {
     float: left;
     margin-right: 15px;
 }
-
-
 
 .competences_container img{
     border-radius: 50%;
@@ -142,20 +118,55 @@ a {
 }
 
 
-
 /******** inf à 430px *************/
 
 @media (max-width:430px) {
+
+    
+
+    .main-container{
+        padding: 0 5px;
+        background-color: #0f0d13;
+        padding: 10px ;
+    
+    }
+
+    .image-cv{ 
+       position: sticky;
+        top: 0;
+        margin: 0;
+        z-index: -2;
+        
+    }
+
+    .intro{
+        position: absolute;
+        top: 345px;
+        left: 10px;  
+        max-width: 400px;
+    }
+
+    .info_text{
+        padding-bottom: 15px;
+        color: #B9B9B9;
+    }
+
+    .logo_deezer{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
     
     .passions_container, .langues_container, .competences_container{
         overflow: auto;
         
     }
-    .container_song, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
+    .contact_container, .container_song, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
         display: none;
     }
 
-    .contact_btn{
+    .contact_btn_mobile{
         position: absolute;
         top: 10px;
         right: 70px;
@@ -163,14 +174,8 @@ a {
         border: none;
         padding: 10px 10px;
         border-radius: 7px ;
+        z-index: 2;
     }
-
-    main{
-        padding: 0 10px;
-    }
-
-
-    
 
 
     /***** burger menu */
@@ -253,9 +258,21 @@ a {
     }
 }
 
-/******** sup à 430px *************/
+/******** sup à 430px ***************************************************/
 
 @media (min-width:430px){
+
+    .search_bar ul {
+        padding-left: 30%;
+    }
+
+
+    .logo_deezer{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 10; 
+    }
 
     article{
         max-width: 900px;
@@ -266,18 +283,19 @@ a {
         padding: 16px;
     }
     
-    .sidenav,.info_text,#menuToggle  {
+    .sidenav,.info_text,#menuToggle, .contact_btn_mobile  {
         display: none;
     }
     
     .intro{
         position: absolute;
-        top: -300px;
-        left: 320px;  
+        top: 100px;
+        left: 350px;  
         max-width: 300px;
+      
     }
+
     
-   
     
     .home_icon a::before{
         content: url(/images/home.svg);
@@ -309,7 +327,7 @@ a {
         border-radius: 50%; 
         background-size: cover;
         background-position: center;
-        margin-top: 20px;
+        margin-top: 20px;    
     }
     
     .sidebar {
@@ -390,8 +408,9 @@ a {
     .connexion_container {
         display: flex;
         align-items: center;
-        gap: 15px; /* Espacement entre les éléments */
-        margin-left: auto; /* Pousse les éléments vers la droite */
+        justify-self: left;
+        gap: 15px;
+      
     }
     
     .decoration_link{
@@ -473,21 +492,25 @@ a {
         border-bottom: 1px solid #1B191F;
     }
 
- 
-
-
     .contact_container{
         display: flex;
         gap: 20px;
         padding-top: 20px;
     }
 
-    .contact_btn{
+    .contact_btn_pc{
+        font-weight: 500;
         background-color: #A238FF;
         border: none;
-        padding: 10px 10px;
+        padding: 10px 10px 10px 20px;
         border-radius: 7px ;
     }
+
+    .contact_btn_pc path{
+       fill: white;
+    }
+
+    
 
     .search_bar{
         border-bottom: 1px solid #363339;
