@@ -9,8 +9,7 @@
 }
 
 main{
-    position: relative;
-    
+    position: relative; 
     display: flex;
     flex-direction: column; /* Mobile first : affichage en colonne */
     gap: 20px;  
@@ -28,7 +27,7 @@ time{
 
 .intro{
     position: absolute;
-    top: -170px; 
+    top: -100px; 
     left: 0;
     width: 100%;    
 }
@@ -71,7 +70,7 @@ h2{
 
 li {
     list-style: none;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     max-width: 500px;
 }
 li, p{
@@ -99,8 +98,8 @@ a {
     overflow: hidden;  /* permet de contenir l'img dans le background */
     display: flex;
     align-items: center;
+    
 }
-
 .coordonnees_container{
     overflow: hidden;
 }
@@ -110,6 +109,8 @@ a {
     float: left;
     margin-right: 15px;
 }
+
+
 
 .competences_container img{
     border-radius: 50%;
@@ -164,19 +165,26 @@ a {
         border-radius: 7px ;
     }
 
+    main{
+        padding: 0 10px;
+    }
+
 
     
 
 
     /***** burger menu */
-    
+    .burgermenu{
+        position: relative;
+    }
+
     #menuToggle {
-        display: block;
-        position: fixed;
+        position: absolute;
         top: 20px;
         right: 20px;
         z-index: 2;
         user-select: none;
+        
     }
     
     #menuToggle input {
@@ -248,6 +256,10 @@ a {
 /******** sup à 430px *************/
 
 @media (min-width:430px){
+
+    article{
+        max-width: 900px;
+    }
     
     .timeline, .coordonnees_container{
         background-color: #1B191F;
@@ -265,9 +277,7 @@ a {
         max-width: 300px;
     }
     
-    main{
-        margin-left: 200px;
-    }
+   
     
     .home_icon a::before{
         content: url(/images/home.svg);
@@ -324,16 +334,16 @@ a {
     
     .search_bar{
         display: flex;
-        justify-content: flex-start; /* Aligné à gauche */
+        justify-content: flex-start;
         align-items: center;
-        padding: 10px 0;
+        padding: 10px;
     }
     
     .input_container {
         position: relative;
         display: flex;
         align-items: center;
-        width: 250px; /* Ajuste la largeur selon tes besoins */
+        width: 250px; 
         color: white;
         
     }
@@ -441,7 +451,7 @@ a {
         display: flex;
         text-align: center;
         justify-content: center;
-        background-color: aqua;
+        background-color: black;
         position: relative;
         z-index: 1;    
     }
@@ -450,14 +460,20 @@ a {
         fill: black;       
     }
 
-    
+  
 
-    .profile_nav:hover{
-        content: '';
-        text-decoration: underline;
-        color: #A238FF;
-
+    .profile_nav a{
+        margin-left: 20px;
+        font-weight: 500;
+       
     }
+
+     .profile_nav {
+        margin-top: 20px;
+        border-bottom: 1px solid #1B191F;
+    }
+
+ 
 
 
     .contact_container{
@@ -473,6 +489,13 @@ a {
         border-radius: 7px ;
     }
 
+    .search_bar{
+        border-bottom: 1px solid #363339;
+    }
+
+    .header_container{
+        margin-left: 20px;
+    }
     
 }
 
@@ -480,8 +503,16 @@ a {
 
 @media (min-width: 430px) and (max-width: 1200px) {
 
+    main{
+        margin-left: 170px;
+        
+       
+    }
+
+    
+
     .header{
-        margin-left: 180px;
+        margin-left: 150px;
 
     }
     .aside_container {
@@ -500,10 +531,6 @@ a {
         
     }
     
-    main{
-        margin-left: 160px;
-        min-width: 1200px;
-    }
     
     .sidebar{
         height: 100%;
@@ -514,48 +541,41 @@ a {
         background-color:#1B191F;
         padding-top: 50px;
     }
+
+    
 }
+
 
 
 /******** sup à 1200px *************/
 
 @media (min-width: 1200px) {
-    main {
-        position: relative;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 40px;
-        max-width: 1200px;
-        margin-left: 200px;
-        align-items: start;
-    }
-    
-    .articles_container , .aside_container{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .aside_container img{
-        width: 46px;
-        height: 46px;
-    }
 
-    .profile_nav  {
-        position: absolute;
-        margin-bottom: 20px;
-        z-index: 10;
+    main{
+        margin-left: 200px;     
     }
-
-    
-    .profile_nav a:hover{
-        content: '';
-        text-decoration: underline;
-        color: #A238FF;
-    }
-
+   
+ 
     .header{
         margin-left: 200px;
 
     }
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr; 
+        gap: 20px;
+    }
+
+    .articles_container {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .asides_container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
 }
