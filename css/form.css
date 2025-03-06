@@ -7,20 +7,38 @@
     color: white;
     font-family: "Inter", "Arial", sans-serif;
     box-sizing: border-box;
+    text-decoration: none;
 }
+main{
+    margin-top: 50px;
+
+}
+
+.back_btn{
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+a:hover{
+    text-decoration: underline;   
+}
+
+.back_btn a::before{
+    content: url(../images/back.svg);
+    padding-right: 10px;  
+}
+
 
 body{
     background-color: #0f0d13;
 }
 
-main{
-    margin-top: 50px;
-}
 
 h1{
     font-family: "Montserrat", serif;
     font-size: 40px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
 }
 
 h2{
