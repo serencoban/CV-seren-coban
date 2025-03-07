@@ -1,7 +1,9 @@
 node_modules/
 .vite/
 package-lock.json
+package.json
 .DS_Store
 dist/
 build/
 *.log
+.idea/
