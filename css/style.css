@@ -17,7 +17,41 @@
     font-family: "Inter", "Arial", sans-serif;
 }
 
+.connexion_btn:hover, #search_btn:hover {
+        background-color: rgba(255, 255, 255, 0.2); 
+  }
 
+  .inscription_btn:hover, .contact_btn_pc:hover {
+    background-color: rgba(176, 115, 201, 0.6); 
+}
+
+.like_btn, .options_btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.like_btn::after, .options_btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.like_btn:hover::after, .options_btn:hover::after {
+    width: 50px;
+    height: 50px;
+}
+
+p:not(.info_text, .intro p):hover{
+    text-decoration: underline;
+      
+}
 
 main{
     position: relative;   
@@ -150,9 +184,8 @@ a {
     }
     
     .intro{
-        position: absolute;
-        top: 325px;
-        left: 10px;  
+      
+      
         max-width: 400px;
     }
     
@@ -172,7 +205,7 @@ a {
         overflow: auto;
         
     }
-    .contact_container, .container_song, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
+    .contact_container, .music-player, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
         display: none;
     }
     
@@ -279,6 +312,8 @@ a {
 /******** sup à 430px ***************************************************/
 
 @media (min-width:430px){
+    
+    
 
     main{
         margin-bottom: 100px;
@@ -539,8 +574,11 @@ a {
         gap: 15px;
         
     }
-    
     .decoration_link{
+        font-weight: 500;
+    }
+    
+    .decoration_link:hover{
         text-decoration: underline;
     }
     
@@ -612,6 +650,7 @@ a {
         display: flex;
         gap: 20px;
         padding-top: 20px;
+
     }
     
     .contact_btn_pc{
@@ -634,6 +673,10 @@ a {
     
     .header_container{
         margin-left: 20px;
+    }
+
+    .contact_container li {
+        padding-right: 10px;
     }
     
 }
