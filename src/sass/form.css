@@ -28,7 +28,7 @@ a:hover{
 }
 
 .back_btn a::before{
-    content: url(../images/back.svg);
+    content: url(../../images/back.svg);
     padding-right: 10px;  
 }
 

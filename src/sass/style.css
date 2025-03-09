@@ -71,7 +71,7 @@ img{
 
 
 .image-cv{
-    background-image: url(../images/cv-picture.png);
+    background-image: url(../../images/cv-picture.png);
     background-size: cover;
     height: 35vh;
     width: 100%;   
