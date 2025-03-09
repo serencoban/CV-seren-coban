@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@400;700&display=swap');
 
 :root {
     --main-text-color: white;
@@ -48,9 +47,13 @@
     height: 50px;
 }
 
-p:not(.info_text, .intro p):hover{
+p:not(.info_text, .intro p, .sidebar p):hover{
     text-decoration: underline;
       
+}
+
+.sidebar ul li:not(.no_hover):hover {
+    background-color: var(--border-color); 
 }
 
 main{
@@ -160,10 +163,39 @@ a {
     object-fit: contain;
 }
 
+.scroll{ 
+    opacity:0 ;
+    filter: blur(5px);
+    transition: opacity 1s, filter 1s;
+
+}
+
+.show{ 
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    
+}
+
+@media(prefers-reduced-motion){
+    .scroll{
+        transition: none;
+     }
+ }
 
 /******** inf à 430px *************/
 
 @media (max-width:430px) {
+    
+
+    .image-cv {
+       
+        position: sticky;
+        top: 0;
+        z-index: -2;
+    }
+   
+    
     
     .content-wrapper {
         padding-top: 30px;
@@ -176,12 +208,7 @@ a {
         
     }
     
-    .image-cv{ 
-        position: sticky;
-        top: 0;
-        z-index: -2;
-        
-    }
+   
     
     .intro{
       
@@ -630,10 +657,7 @@ a {
         top: 0;
         right: 0;
     }
-    
-    
-    
-    
+ 
     .profile_nav a{
         margin-left: 20px;
         font-weight: 500;
@@ -705,8 +729,7 @@ a {
     }
     
     .langues_container p, .competences_container p{
-        display: flex;
-        
+        display: flex;    
     }
     
     .sidebar{
@@ -717,9 +740,7 @@ a {
         left: 0;
         background-color:var(--container-color);
         padding-top: 50px;
-    }
-    
-    
+    }     
 }
 
 
@@ -730,8 +751,7 @@ a {
     main{
         margin-left: 200px;     
     }
-    
-    
+
     .header{
         margin-left: 180px;
     }
@@ -743,11 +763,11 @@ a {
     }
     
     .articles_container {
-        width: 70%; /* Ajuste selon ton besoin */
+        width: 70%; 
     }
     
     .asides_container {
-        width: 28%; /* Ajuste selon ton besoin */
-        order: 2; /* Assure que l'aside est à droite */
+        width: 28%; 
+        order: 2; 
     }
 }
