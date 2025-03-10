@@ -12,3 +12,4 @@ const observer = new IntersectionObserver((entries)=>{
 
 const scrollElt = document.querySelectorAll('.scroll')
 scrollElt.forEach((el)=> observer.observe(el));
+

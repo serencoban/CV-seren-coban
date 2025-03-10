@@ -414,6 +414,8 @@ a {
     fill: var(--purple-color);
 }
 
+
+
 /************************* Barre de progression *****************************/
 .progress-container {
     display: flex;
