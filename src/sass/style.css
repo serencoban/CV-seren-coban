@@ -16,7 +16,7 @@
     font-family: "Inter", "Arial", sans-serif;
 }
 
-.connexion_btn:hover, #search_btn:hover {
+.connexion_btn:hover, #search_btn:hover, .sort:hover {
         background-color: rgba(255, 255, 255, 0.2); 
   }
 
@@ -232,7 +232,7 @@ a {
         overflow: auto;
         
     }
-    .contact_container, .music-player, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav {
+    .contact_container, .music-player, .sidebar, .search_bar, .like_btn, .options_btn, .profile_nav, .cell_sort {
         display: none;
     }
     
@@ -414,7 +414,9 @@ a {
     fill: var(--purple-color);
 }
 
-
+.playing svg path {
+    fill: var(--main-text-color);
+}
 
 /************************* Barre de progression *****************************/
 .progress-container {
@@ -611,7 +613,7 @@ a {
         text-decoration: underline;
     }
     
-    .connexion_btn{
+    .connexion_btn , .sort{
         background-color:  transparent;
         border: 1px solid var(--border-color);
         padding: 10px 20px;
@@ -703,6 +705,41 @@ a {
 
     .contact_container li {
         padding-right: 10px;
+    }
+
+    .passions_header {
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center; /* Centre verticalement */
+        justify-content: space-between; /* Place "Passions" à gauche et le tri à droite */
+        width: 100%; /* S'assure que le conteneur prend toute la largeur */
+    }
+    
+    
+    .dropdown_menu {
+    
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background: var(--container-color);
+        width: 150px;
+        display: none;
+        z-index: 10;
+    }
+    
+    .dropdown_menu[aria-hidden="false"] {
+        display: block;
+    }
+    
+    .dropdown_menu li {
+        font-size: 12px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .dropdown_menu li:hover {
+        
+        color: var(--purple-color);
     }
     
 }

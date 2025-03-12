@@ -1,10 +1,3 @@
-<!-- 
-avoir plusieur version d'une mm images (srcset, wordpress peut aider)
-pas utlsier png partout
-attribut alt
-sass scss tailwind
-gtmetrix
--->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -90,12 +83,12 @@ gtmetrix
             <!--image cv + logo deezer-->
             <div class="image-cv"></div>
 
-            <section class="intro"> 
-                <h1>Seren Coban</h1>
-                <p>Je suis une étudiante de 20 ans en option web à la HEPL.</p>
+            <section itemscope itemtype="https://schema.org/Person" class="intro"> 
+                <h1 itemprop="name">Seren Coban</h1>
+                <p itemprop="description">Je suis une étudiante de 20 ans en option web à la HEPL.</p>
             </section>
             
-            <div class="main-container">
+            <div  class="main-container">
 
                 
                 <!--side bar -->
@@ -149,77 +142,98 @@ gtmetrix
                     </div>
                     
                     
-                    <div class="content-wrapper">
+                    <div itemscope itemtype="https://schema.org/Person"  class="content-wrapper">
                         
                         <div class="articles_container">
                             
                             
                             <article class="parcours-sco scroll">
-                                <h2>Parcours scolaires</h2>
+                                <h2 itemprop="title">Parcours scolaires</h2>
                                 <ol class="timeline">
-                                    <li>
+                                    <li itemscope itemtype="https://schema.org/EducationalOrganization">
                                         <img src="images/hepl-logo.jpg" alt="Logo Haute Ecole de la Province de Liège">
-                                        <time datetime="2023">2023</time> <p>Option web - Haute École de la Province de Liège</p>
+                                        <time datetime="2023">2023</time> <p itemprop="name">Option web - Haute École de la Province de Liège</p>
                                     </li>
-                                    <li>
+                                    <li itemscope itemtype="https://schema.org/EducationalOrganization">
                                         <img src="images/uliege-logo.jpg" alt="Logo Université de Liège">
-                                        <time datetime="2021">2021</time> <p>Architecture - Université de Liège</p>
+                                        <time datetime="2021">2021</time> <p itemprop="name">Architecture - Université de Liège</p>
                                     </li>
-                                    <li>
+                                    <li itemscope itemtype="https://schema.org/EducationalOrganization">
                                         <img src="images/arh-logo.jpg" alt="Logo Athénée Royal de Herstal">
-                                        <time datetime="2016">2016</time> <p> Option sciences économiques et langues étrangères - Athénée Royal de Herstal</p>
+                                        <time datetime="2016">2016</time> <p itemprop="name"> Option sciences économiques et langues étrangères - Athénée Royal de Herstal</p>
                                     </li>
                                 </ol>
                             </article>
                             
                             <article class="experiences scroll">
                                 <h2>Expériences</h2>
-                                <p class="info_text">Les dernières expériences de Seren Coban</p>
+                                <p class="info_text">Les dernières expériences de <span itemprop="name">Seren Coban</span></p>
                                 <div class="experience_container">
                                     <img src="images/study.jpg" alt="une fille qui étudie">
                                     <ol>
-                                        <li><time datetime="2022">2022</time>-<time datetime="2023">2023</time> <p>Technicienne de surface</p></li>
-                                        <li><time datetime="2019">2019</time>-<time datetime="2021">2021</time> <p>Traductrice</p></li>
-                                        <li><time datetime="2018">2018</time>-<time datetime="2019">2019</time> <p>Préparations de Commande</p></li>
+                                        <li itemscope itemtype="https://schema.org/JobExperience">
+                                            <time itemprop="startDate" datetime="2022">2022</time>-<time itemprop="endDate" datetime="2023">2023</time><p itemprop="jobTitle">Technicienne de surface</p>
+                                        </li>
+                                        <li itemscope itemtype="https://schema.org/JobExperience">
+                                            <time itemprop="startDate" datetime="2019">2019</time>-<time itemprop="endDate" datetime="2021">2021</time><p itemprop="jobTitle">Traductrice</p>
+                                        </li>
+                                        <li itemscope itemtype="https://schema.org/JobExperience">
+                                            <time itemprop="startDate" datetime="2018">2018</time>-<time itemprop="endDate" datetime="2019">2019</time><p itemprop="jobTitle">Préparations de Commande</p>
+                                        </li>
                                     </ol>
                                 </div>
                                 
                                 
                             </article>
                             
-                            <article class="coordonnees scroll">
-                                <h2>Coordonnées</h2>
-                                <p class="info_text">Contacter Seren Coban</p>
+                            <article itemscope itemtype="https://schema.org/ContactPoint" class="coordonnees scroll">
+                                <h2 itemprop="title">Coordonnées</h2>
+                                <p  class="info_text">Contacter <span itemprop="name">Seren Coban</span></p>
                                 <div class="coordonnees_container">
                                     <img src="images/coordonnees.jpg" alt="Icon d'un message">
                                     <ol>
-                                        <li>04/71 32 63 08 - serencobs@gmail.com</li>
-                                        <li>Rue de Herstal 12B 4680 Hermée</li>
+                                        <li itemprop="telephone">04/71 32 63 08 - <span itemprop="email">serencobs@gmail.com</span> </li>
+                                        <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                            <span itemprop="streetAddress">Rue de Herstal 12B</span>, 
+                                            <span itemprop="postalCode">4680</span> 
+                                            <span itemprop="addressLocality">Hermée</span>
+                                        </li>
                                     </ol>
                                 </div>  
                             </article>
                             
                             
                             <aside class="passions scroll">
-                                <h2>Passions</h2>
-                                <p class="info_text">Découvrez les passe temps de Seren Coban</p>
+                                <h2 class="hidden"></h2>
+                                <div class="passions_header">
+                                    <h2 itemprop="title">Passions</h2>
+                                <div class="cell_sort">
+                                    <span class="dropdown">
+                                        <button class="sort" type="button">Les plus connues</button>
+                                        <ul class="dropdown_menu" aria-hidden="true"></ul>
+                                    </span>
+                                </div>
+                                </div>
+                                
+
+                                <p class="info_text">Découvrez les passe temps de <span itemprop="name">Seren Coban</span></p>
                                 <div class="passions_container">
                                     <ul>
                                         <li>
                                             <img src="images/volleyball.png" alt="">
-                                            <p>Jouer au volleyball</p>
+                                            <p itemprop="knowsAbout">Jouer au volleyball</p>
                                         </li>
                                         <li>
                                             <img src="images/reading.png" alt=""> 
-                                            <p>Lire des romans</p>
+                                            <p itemprop="knowsAbout">Lire des romans</p>
                                         </li>
                                         <li>
                                             <img src="images/langues.jpg" alt="">
-                                            <p>Etudier les langues</p>
+                                            <p itemprop="knowsAbout">Etudier les langues</p>
                                         </li>
                                         <li>
                                             <img src="images/gaming.png" alt="">
-                                            <p>Jouer aux jeux vidéos</p>
+                                            <p itemprop="knowsAbout">Jouer aux jeux vidéos</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -230,14 +244,14 @@ gtmetrix
                         
                         <div class="aside_container">
                             <aside class="langue">
-                                <h2>Langues</h2>
-                                <p class="info_text">Les langues couramment parlées de Seren Coban</p>
+                                <h2 itemprop="title">Langues</h2>
+                                <p class="info_text">Les langues couramment parlées de <span itemprop="name">Seren Coban</span></p>
                                 <div class="langues_container">
                                     <ul>
                                         <li>
                                             <img src="images/france.png" alt="">
                                             <div class="language_info">
-                                                <p>Français</p>
+                                                <p itemprop="knowsLanguage">Français</p>
                                                 <p>Niveau C1</p>
                                             </div>
                                         </li>
@@ -245,7 +259,7 @@ gtmetrix
                                         <li>
                                             <img src="images/uk.png" alt="">
                                             <div class="language_info">
-                                                <p>Anglais</p>
+                                                <p itemprop="knowsLanguage">Anglais</p>
                                                 <p>Niveau B2</p>
                                             </div>
                                         </li>
@@ -253,7 +267,7 @@ gtmetrix
                                         <li>
                                             <img src="images/turkiye.jpg" alt="">
                                             <div class="language_info">
-                                                <p>Turc</p>
+                                                <p itemprop="knowsLanguage">Turc</p>
                                                 <p>Niveau B1</p>
                                             </div>
                                         </li>    
@@ -265,30 +279,30 @@ gtmetrix
                             
                             
                             <aside class="competence">
-                                <h2>Compétences</h2>
-                                <p class="info_text">Les points forts de Seren Coban</p>
+                                <h2 itemprop="title">Compétences</h2>
+                                <p class="info_text">Les points forts <span itemprop="name">Seren Coban</span></p>
                                 <div class="competences_container">
                                     <ul>
                                         <li>
                                             <img src="images/frontend.png" alt="">
                                             <div class="competences_info">
-                                                <p>Front-end</p>
-                                                <p>HTML, CSS, JS</p>
+                                                <p itemprop="skills">Front-end</p>
+                                                <p itemprop="skills">HTML, CSS, JS</p>
                                             </div>
                                         </li>
                                         <li>
                                             <img src="images/backend.png" alt="">
                                             <div class="competences_info">
-                                                <p>Back-end</p>
-                                                <p>PHP, SQL </p>
+                                                <p itemprop="skills">Back-end</p>
+                                                <p itemprop="skills">PHP, SQL </p>
                                             </div>
                                         </li>
                                         
                                         <li>
                                             <img src="images/graphic-design.jpg" alt="">
                                             <div class="competences_info">
-                                                <p>Graphic Design</p>
-                                                <p>Illustrator, Photopshop</p>
+                                                <p itemprop="skills">Graphic Design</p>
+                                                <p itemprop="skills">Illustrator, Photopshop</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -310,13 +324,13 @@ gtmetrix
        
     </main>
      <!--Seulement pc-->
-     <div class="music-player">
+     <div itemscope itemtype="https://schema.org/MusicRecording" class="music-player">
         <!-- Partie Gauche: Image + Titre -->
         <div class="player-left">
-            <img src="./images/hepl-logo.jpg" alt="Album cover" class="album-cover">
+            <img src="./images/hepl-logo.jpg" alt="Album cover" class="album-cover" itemprop="image">
             <div class="song-info">
-                <p class="song-title">Option Web</p>
-                <p class="artist-name">Haute École de la Province de Liège</p>
+                <p class="song-title" itemprop="name">Option Web</p>
+                <p class="artist-name" itemprop="byArtist">Haute École de la Province de Liège</p>
             </div>
         </div>
     
